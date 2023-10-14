@@ -1,0 +1,22 @@
+{
+  "name": "padraopotencia",
+  "version": "1.0.0",
+  "description": "Uma solução em software focada em garantir padrões de excelência em engenharia elétrica, priorizando segurança, qualidade e conformidade.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write ."
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
+}
