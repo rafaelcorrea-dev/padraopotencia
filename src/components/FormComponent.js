@@ -1,4 +1,3 @@
-// FormComponent.jsx
 import React, { useState } from "react";
 import styles from "../../styles/components/FormComponent.module.scss";
 
