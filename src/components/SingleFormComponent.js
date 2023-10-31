@@ -29,7 +29,7 @@ function SingleFormComponent({ onAdd }) {
           <input value={tipoUC} onChange={(e) => setTipoUC(e.target.value)} />
         </label>
       </div>
-      <button type="submit">Adicionar Registro</button>
+      <button type="submit">Adicionar UC</button>
     </form>
   );
 }
