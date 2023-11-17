@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../styles/components/FormComponent.module.scss";
+import styles from "styles/components/FormComponent.module.scss";
 
 function FormComponent({ onGenerate }) {
   const [tipoUC, setTipoUC] = useState("");
@@ -32,7 +32,7 @@ function FormComponent({ onGenerate }) {
       </div> */}
       <div>
         <label>
-          Descrição
+          Descrição:
           <select
             value={descricaoUC}
             onChange={(e) => setDescricaoUC(e.target.value)}
@@ -47,7 +47,12 @@ function FormComponent({ onGenerate }) {
       <div>
         <label>
           Tipo de UC:
-          <input value={tipoUC} onChange={(e) => setTipoUC(e.target.value)} />
+          <select value={tipoUC} onChange={(e) => setTipoUC(e.target.value)}>
+            <option value="Residencial">Residencial</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Industrial">Industrial</option>
+            <option value="Rural">Rural</option>
+          </select>
         </label>
       </div>
       <label>

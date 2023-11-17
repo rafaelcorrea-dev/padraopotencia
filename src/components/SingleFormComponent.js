@@ -1,6 +1,6 @@
 // SingleFormComponent.jsx
 import React, { useState } from "react";
-import styles from "../../styles/components/FormComponent.module.scss";
+import styles from "styles/components/FormComponent.module.scss";
 
 function SingleFormComponent({ onAdd }) {
   const [tipoUC, setTipoUC] = useState("");
@@ -26,7 +26,12 @@ function SingleFormComponent({ onAdd }) {
       <div>
         <label>
           Tipo de UC:
-          <input value={tipoUC} onChange={(e) => setTipoUC(e.target.value)} />
+          <select value={tipoUC} onChange={(e) => setTipoUC(e.target.value)}>
+            <option value="Residencial">Residencial</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Industrial">Industrial</option>
+            <option value="Rural">Rural</option>
+          </select>
         </label>
       </div>
       <button type="submit">Adicionar UC</button>
