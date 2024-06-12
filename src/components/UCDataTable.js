@@ -4,14 +4,14 @@ import { DataGrid } from "@mui/x-data-grid";
 const columns = [
   { field: "id", headerName: "ID", width: 10 },
 
-  { field: "descricao", headerName: "Descrição", width: 150, editable: true },
+  { field: "descricao", headerName: "Descrição", width: 120, editable: true },
   {
     field: "complemento",
-    headerName: "Complemento da UC",
-    width: 150,
+    headerName: "Complemento",
+    width: 120,
     editable: true,
   },
-  { field: "tipo", headerName: "Tipo de UC", width: 150, editable: true },
+  { field: "tipo", headerName: "Tipo de UC", width: 120, editable: true },
 ];
 
 function UCDataTable({ data }) {
