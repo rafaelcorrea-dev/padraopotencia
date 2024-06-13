@@ -11,13 +11,14 @@ export default function DataTable() {
     setGridData(newData);
   };
 
-  const handleAdd = (tipoUC, descricaoUC) => {
+  const handleAdd = (descricaoUC, complementoUC, tipoUC) => {
     const id = gridData.length + 1;
 
     const novoRegistro = {
       id: id,
-      tipo: tipoUC,
       descricao: descricaoUC,
+      complemento: complementoUC,
+      tipo: tipoUC,
     };
 
     setGridData((prevData) => [...prevData, novoRegistro]);

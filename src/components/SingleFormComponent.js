@@ -1,15 +1,17 @@
-// SingleFormComponent.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "styles/components/FormComponent.module.scss";
+import { descricoesUC, tiposUC } from "src/components/constants";
+import SelectComponent from "src/components/SelectComponent";
+import InputComponent from "src/components/InputComponent";
 
 function SingleFormComponent({ onAdd }) {
-  const [tipoUC, setTipoUC] = useState("");
-  const [descricaoUC, setDescricaoUC] = useState("");
-  const [carga, setCargaUC] = useState("");
+  const [descricaoUC, setDescricaoUC] = useState(descricoesUC[0]);
+  const [complementoUC, setComplementoUC] = useState("");
+  const [tipoUC, setTipoUC] = useState(tiposUC[0]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd(tipoUC, descricaoUC);
+    onAdd(descricaoUC, complementoUC, tipoUC);
   };
 
   return (
@@ -17,21 +19,30 @@ function SingleFormComponent({ onAdd }) {
       <div>
         <label>
           Descrição:
-          <input
+          <SelectComponent
             value={descricaoUC}
             onChange={(e) => setDescricaoUC(e.target.value)}
+            options={descricoesUC}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Complemento:
+          <InputComponent
+            value={complementoUC}
+            onChange={(e) => setComplementoUC(e.target.value)}
           />
         </label>
       </div>
       <div>
         <label>
           Tipo de UC:
-          <select value={tipoUC} onChange={(e) => setTipoUC(e.target.value)}>
-            <option value="Residencial">Residencial</option>
-            <option value="Comercial">Comercial</option>
-            <option value="Industrial">Industrial</option>
-            <option value="Rural">Rural</option>
-          </select>
+          <SelectComponent
+            value={tipoUC}
+            onChange={(e) => setTipoUC(e.target.value)}
+            options={tiposUC}
+          />
         </label>
       </div>
       <button type="submit">Adicionar UC</button>
