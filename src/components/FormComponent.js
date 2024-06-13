@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import styles from "styles/components/FormComponent.module.scss";
+import InputComponent from "src/components/InputComponent";
+import SelectComponent from "src/components/SelectComponent";
+import { tiposUC, descricoesUC } from "src/components/constants";
 
 function FormComponent({ onGenerate }) {
-  const [tipoUC, setTipoUC] = useState("");
-  const [descricaoUC, setDescricaoUC] = useState("");
+  const [tipoUC, setTipoUC] = useState(tiposUC[0]);
+  const [descricaoUC, setDescricaoUC] = useState(descricoesUC[0]);
   const [numeroAndares, setNumeroAndares] = useState("");
   const [numeroInicial, setNumeroInicial] = useState("");
   const [numeroFinal, setNumeroFinal] = useState("");
@@ -21,38 +24,24 @@ function FormComponent({ onGenerate }) {
 
   return (
     <form onSubmit={handleSubmit} className={styles.formContainer}>
-      {/* <div>
-        <label>
-          Descrição:
-          <input
-            value={descricaoUC}
-            onChange={(e) => setDescricaoUC(e.target.value)}
-          />
-        </label>
-      </div> */}
       <div>
         <label>
           Descrição:
-          <select
+          <SelectComponent
             value={descricaoUC}
             onChange={(e) => setDescricaoUC(e.target.value)}
-          >
-            <option value="Apto">Apto</option>
-            <option value="Condomínio">Condomínio</option>
-            <option value="Sala Com.">Sala Com.</option>
-            <option value="Casa">Casa</option>
-          </select>
+            options={descricoesUC}
+          />
         </label>
       </div>
       <div>
         <label>
           Tipo de UC:
-          <select value={tipoUC} onChange={(e) => setTipoUC(e.target.value)}>
-            <option value="Residencial">Residencial</option>
-            <option value="Comercial">Comercial</option>
-            <option value="Industrial">Industrial</option>
-            <option value="Rural">Rural</option>
-          </select>
+          <SelectComponent
+            value={tipoUC}
+            onChange={(e) => setTipoUC(e.target.valeu)}
+            options={tiposUC}
+          />
         </label>
       </div>
       <label>

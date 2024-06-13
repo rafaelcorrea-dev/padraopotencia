@@ -1,7 +1,7 @@
 import FormComponent from "../src/components/FormComponent";
 import SingleFormComponent from "../src/components/SingleFormComponent";
-import UCDataTable from "../src/components/UCDataTable"; // Importe o componente UCDataTable
-import React, { useState } from "react";
+import UCDataTable from "../src/components/UCDataTable";
+import { useState } from "react";
 
 export default function DataTable() {
   const [gridData, setGridData] = useState([]);
